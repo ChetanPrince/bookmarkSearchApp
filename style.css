@@ -24,7 +24,7 @@ input{
     width: 15rem;
     height: 1.8rem;
 }
-.search-tags{
+.search-tags, button{
     border-radius: 7px;
     border: none;
     box-shadow: 3px 3px 10px grey;
@@ -34,6 +34,7 @@ button{
     width: 7.5rem;
     height: 2rem;
     cursor: pointer;
+    
     background:linear-gradient(77deg, rgba(237,109,180,0.3903133903133903) 47%, rgba(200,117,242,0.8603988603988604) 89%);
 }
 button:hover{
@@ -47,9 +48,23 @@ button:active{
     font-size:x-small;
 }
 .wrapperDiv{
-    width: 80%;
+    width: 100%;
     height: 150px;
+    /* display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center; */
+}
+#bookmark-table{
     margin-left: 10%;
-    /* background: red; */
-    /* border: 2px solid black; */
+    width: 80%;
+}
+.rowDesign{
+   border: 1px solid black;
+
+}
+#bookmark-table th, td{
+    border: 1px solid red;
+    padding: 8px;
+    margin: 10px 20px;
 }

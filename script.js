@@ -4,9 +4,14 @@ function onSubmitForm(e){
     if(selectedRow === null){
         addBookmark();
     }
+    // else if(!selectedRow){
+    //     addBookmark();
+    // }
     else{
+
         updateForm();
     }
+    
     resetForm();
 
 };
@@ -22,6 +27,7 @@ function addBookmark(){
     const inputUrl = document.getElementById("book-url").value;
    
     const tr =document.createElement("tr");
+    tr.classList.add("rowDesign");
     tr.innerHTML = `<td>${inputUrl}</td>
     <td onClick="edit(this)"><button>Edit</button></td>
     <td onClick="deleteItem(this)"><button>Delete Bookmark</button></td>`;
@@ -38,12 +44,13 @@ function updateForm(){
     selectedRow = null;
 }
 function deleteItem(td){
-    if(confirm("Are you sure you want to delete this record?")){
-       row = td.parentElement.parentElement;
-       row.remove();
-       resetForm();
-    } 
-}
+        if(confirm("Are you sure you want to delete this record?")){
+           row = td.parentElement;
+           row.remove();
+           resetForm();
+        } 
+    }
+    
 
 function resetForm(){
     document.getElementById("book-url").value = "";
