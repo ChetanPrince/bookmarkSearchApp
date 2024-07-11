@@ -16,12 +16,6 @@ function onSubmitForm(e){
 
 };
 
-
-
-const addBtn = document.getElementById("add-btn");
-const deleteBtn = document.getElementById("delete-btn");
-
-
 function addBookmark(){
     const wrapper = document.getElementById("bookmark-table").querySelector('tbody');
     const inputUrl = document.getElementById("book-url").value;
@@ -32,7 +26,6 @@ function addBookmark(){
     <td onClick="edit(this)"><button>Edit</button></td>
     <td onClick="deleteItem(this)"><button>Delete Bookmark</button></td>`;
     wrapper.appendChild(tr);
-    
 }
 
 function edit(td){
@@ -50,11 +43,20 @@ function deleteItem(td){
            resetForm();
         } 
     }
-    
-
 function resetForm(){
     document.getElementById("book-url").value = "";
 }
 
+function clearForm(){
+    const tbody = document.getElementById("bookmark-table").getElementsByTagName("tbody")[0];
+    const rows = tbody.querySelectorAll("tr");
+    if(confirm("Are you sure you want to delete every record in the data?")){
+        rows.forEach(row => row.remove());
+    }
+    resetForm();
+}
 
+const addBtn = document.getElementById("add-btn");
+const deleteBtn = document.getElementById("delete-btn");
 addBtn.addEventListener("click", onSubmitForm);
+deleteBtn.addEventListener("click", clearForm);

@@ -47,21 +47,10 @@ button:active{
     height: 1.5rem;
     font-size:x-small;
 }
-.wrapperDiv{
-    width: 100%;
-    height: 150px;
-    /* display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center; */
-}
-#bookmark-table{
-    margin-left: 10%;
-    width: 80%;
-}
-.rowDesign{
-   border: 1px solid black;
 
+#bookmark-table{
+    margin-left: 5%;
+    width: 90%;
 }
 #bookmark-table th, td{
     border: 1px solid red;
